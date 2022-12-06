@@ -1,0 +1,81 @@
+
+<label><img src="assets/img/pages/Call-phone.png" alt="Girl in a jacket" width="1690" height="600"> </label>
+<mat-cart fxLayout="row wrap" fxlayoutalign="space-around">
+    <div fxLayout="column" fxLayoutAlign="center center " class="text-center"></div>
+  </mat-cart>
+  <mat-card fxLayout="row wrap" fxLayoutAlign="space-around">
+  <br><br><br>
+  <div fxFlex="100" fxFlex.gt-xs="33.3">
+    <div fxLayout="column" fxLayoutAlign="center center " class="text-center">
+      <mat-icon color="primary" class="mat-icon-lg">home</mat-icon>
+      <h1 class="primary-text py-1">ADDRESS :</h1>
+  
+        <h1><span><u class="text-justify font-weight-bold">Contact Tchad </u></span></h1>
+        <h1><span class="text-justify">N'djaména Tchad,  Moursal</span></h1>
+        <h1><span class="text-justify">(+235) 66 48 25 95</span></h1>
+        <h1><span class="text-justify">(+235) 66 06 79 52</span></h1>
+        <h1><span class="text-justify">(+235) 69 42 74 14</span></h1>
+    
+    </div>
+  </div>
+  <div fxFlex="100" fxFlex.gt-xs="33.3" ngClass.xs="mt-2">
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <mat-icon color="primary" class="mat-icon-lg">call</mat-icon>
+      <h1 class="primary-text py-1">TELEPHONE </h1>
+      <h1><span><u class="text-justify font-weight-bold">Contact Cameroun</u></span></h1>
+      <h1><span class="text-justify">(+237) 656 48 25 95</span></h1>
+      <h1><span class="text-justify">(+237) 696 06 79 52</span></h1>
+      <h1><span class="text-justify">(+237) 697 42 74 14</span></h1>
+    </div>
+  </div>
+  <div fxFlex="100" fxFlex.gt-xs="33.3" ngClass.xs="mt-2">
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <h1><mat-icon color="primary" class="mat-icon-lg">mail_outline</mat-icon></h1>
+      <h1 class="primary-text py-1">E-MAIL :</h1>
+      <h1><span class="text-justify">serviceclient@adjour-tech.com</span></h1>
+    </div>
+  </div>
+      <div class="divider w-100 mt-2"></div>
+  <h1 class="w-100 text-center py-2 animate__animated animate__rubberBand animate__delay-5s wow">CONTACTEZ NOUS</h1>
+  <form (ngSubmit)="sendFormulaire()" [formGroup]="contactForm">
+    <div fxLayout="row wrap">
+      <div fxFlex="100" fxFlexOffset.gt-sm="35" fxFlex.gt-sm="70" class="animate__animated animate__fadeInLeft wow">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>{{appSettings.langue?.contact_us_form_label_nom}}</mat-label>
+          <input matInput formControlName="name">
+          <mat-error *ngIf="contactForm.controls.name.errors?.required">Votre nom:</mat-error>
+        </mat-form-field>
+      </div>
+      <div fxFlex="100" fxFlexOffset.gt-sm="35" fxFlex.gt-sm="70" class="animate__animated animate__fadeInLeft animate__delay-1s wow">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>{{appSettings.langue?.contact_us_form_label_email}}</mat-label>
+          <input matInput formControlName="email">
+          <mat-error *ngIf="contactForm.controls.email.errors?.required">Votre adresse email:</mat-error>
+          <mat-error *ngIf="contactForm.controls.email.errors?.invalidEmail">Email invalide</mat-error>
+        </mat-form-field>
+      </div>
+      <div fxFlex="100" fxFlexOffset.gt-sm="35" fxFlex.gt-sm="70" class="animate__animated animate__fadeInLeft animate__delay-2s wow">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>{{appSettings.langue?.contact_us_form_label_subject}}</mat-label>
+          <input matInput formControlName="subject">
+          <mat-error *ngIf="contactForm.controls.subject.errors?.required">Veillez entrer le sujet</mat-error>
+        </mat-form-field>
+      </div>
+      <div fxFlex="100" fxFlexOffset.gt-sm="35" fxFlex.gt-sm="70" class="animate__animated animate__fadeInLeft animate__delay-3s wow">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>{{appSettings.langue?.contact_us_form_label_message}}</mat-label>
+          <textarea matInput formControlName="message" rows="9"></textarea>
+          <mat-error *ngIf="contactForm.controls.message.errors?.required">Dites nous quelque chose</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <br/>
+
+    <div fxLayoutAlign="center">
+      <button mat-raised-button color="warn" class="animate__animated animate__fadeInLeft animate__delay-4s wow">
+        {{appSettings.langue?.contact_us_form_send_btn}}
+      </button>
+    </div>
+  </form>
+</mat-card>
+
